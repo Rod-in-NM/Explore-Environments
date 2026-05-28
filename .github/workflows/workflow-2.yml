@@ -6,14 +6,14 @@ name: Workflow 2 (for the staging environment)
 on:
   pull_request:
     branches: [ "main" ]  # Technically, this may not be necessary with GitHub Flow
-    paths-ignore:               # This didn't want to work, so I commented it out.
-      - '.github/workflows/**'  # This didn't want to work, so I commented it out.
+    paths-ignore:
+      - '.github/workflows/**' 
 
   workflow_dispatch: # manual
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "deploy"
   deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
