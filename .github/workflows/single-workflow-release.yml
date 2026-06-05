@@ -21,7 +21,11 @@ jobs:
         steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - uses: actions/checkout@v6
+
+        # Putting in this step to see what event actions are involved
+        - name: Debug event
+          run: echo "event=${{ github.event_name }} action=${{ toJson(github.event) }}"
     
         # Runs a single command using the runners shell
         - name: Print value from ENVIRONMENT
-          run: echo ${{ vars.DISPLAY_TEXT }}
+          run: echo "${{ vars.DISPLAY_TEXT }}"
