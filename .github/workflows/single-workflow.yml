@@ -2,7 +2,7 @@
 # I am going to modify this workflow (which I created by copying the workflow-3.yml file) to be for the production environment,
 # to follow the pattern described in the link above.
 
-name: Single Workflow (for all 3 environments)
+name: Single Workflow (for development and staging environments)
 
 # Controls when the workflow will run
 on:
@@ -43,17 +43,3 @@ jobs:
       # Runs a single command using the runners shell
       - name: Print value from ENVIRONMENT
         run: echo ${{ vars.DISPLAY_TEXT }}
-
-  # production-deploy:
-  #   needs: staging-deploy
-  #   runs-on: ubuntu-latest
-  #   environment: production
-      
-  #   # Steps represent a sequence of tasks that will be executed as part of the job
-  #   steps:
-  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-  #     - uses: actions/checkout@v6
-
-  #     # Runs a single command using the runners shell
-  #     - name: Print value from ENVIRONMENT
-  #       run: echo ${{ vars.DISPLAY_TEXT }}
