@@ -41,6 +41,7 @@ jobs:
 
   staging-deploy:
     # if: github.event.inputs.environment == 'staging' # github.event_name == 'release'
+    needs: development-deploy
     runs-on: ubuntu-latest
     environment: staging
       
