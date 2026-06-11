@@ -26,7 +26,7 @@ on:
 jobs:
 
   development-deploy:
-    if: github.event.inputs.environment == 'development' # github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # if: github.event.inputs.environment == 'development' # github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: development
       
@@ -40,7 +40,7 @@ jobs:
         run: echo ${{ vars.DISPLAY_TEXT }}
 
   staging-deploy:
-    if: github.event.inputs.environment == 'staging' # github.event_name == 'release'
+    # if: github.event.inputs.environment == 'staging' # github.event_name == 'release'
     runs-on: ubuntu-latest
     environment: staging
       
