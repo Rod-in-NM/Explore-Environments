@@ -35,6 +35,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v6
 
+      - name: Debug trigger event
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Event action: ${{ github.event.action }}"
+          echo "Ref: ${{ github.ref }}"
+
       # Runs a single command using the runners shell
       - name: Print value from ENVIRONMENT
         run: echo ${{ vars.DISPLAY_TEXT }}
